@@ -148,18 +148,19 @@ public class BookDAO {
         return 0;
     }
     
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        BookDAO dao = new BookDAO();
 //        Book book = new Book(3, "kfjn lk", "lndlkb l ", "dshj kj ", "dffas  d ", 44, "8b");
-//        Book book1 = new Book(3, "kfsdfgadjn lk", "lnasdcdlkb l ", "dshj dgfvzskj ", "dffas dfhg d ", 70, "8c");
-//        Book book2 = new Book(3, "kfjdfhn lk", "lndlkb l ", "dshj kj ", "dffas fcgh d ", 110, "3b");
-//        Book book3 = new Book(3, "kfjnsfx lk", "lndlkb ddrl ", "dshj trsyskj ", "dffas thdhs d ", 64, "4a");
-////        List<Book> list = dao.readByAuthor("lndlkb l");
-////        int b = dao.delete(1);
-////        System.out.println(b);
-//        dao.create(book);
-//        dao.create(book1);
-//        dao.create(book2);
-//        dao.create(book3);
-    }
+////        Book book1 = new Book(3, "kfsdfgadjn lk", "lnasdcdlkb l ", "dshj dgfvzskj ", "dffas dfhg d ", 70, "8c");
+////        Book book2 = new Book(3, "kfjdfhn lk", "lndlkb l ", "dshj kj ", "dffas fcgh d ", 110, "3b");
+////        Book book3 = new Book(3, "kfjnsfx lk", "lndlkb ddrl ", "dshj trsyskj ", "dffas thdhs d ", 64, "4a");
+//////        List<Book> list = dao.readByAuthor("lndlkb l");
+//////        int b = dao.delete(1);
+//////        System.out.println(b);
+////        dao.create(book);
+////        dao.create(book1);
+////        dao.create(book2);
+////        dao.create(book);
+//        System.out.println(book==null);
+//    }
 }

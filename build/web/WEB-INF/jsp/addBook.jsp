@@ -13,41 +13,41 @@
     
 <body>
     
-    <form:form cssStyle="border:1px solid #ccc" action="" method="POST" commandName="">
+    <form:form cssStyle="border:1px solid #ccc" action="${pageContext.servletContext.contextPath}/listbook/${usingUser.userID}.html" method="POST" commandName="addingBook">
         <div class="container">
             <h1>ADD BOOK</h1>
             <hr>
 
             <label  ><b>NAME</b></label>
-            <form:input placeholder="Enter " path="" required="true"/>
+            <form:input placeholder="Enter " path="bookName" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->
 
             <label  ><b> AUTHOR </b></label>
-            <form:input placeholder="Enter " path="" required="true"/>
+            <form:input placeholder="Enter " path="author" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->
 
             <label  ><b>PUBLISHER</b></label>
-            <form:input placeholder="Enter " path="" required="true"/>
+            <form:input placeholder="Enter " path="publisher" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->
 
             <label  ><b>DAY OF PUBLISH</b></label>
-            <form:input placeholder="Enter " path="" required="true"/>
+            <form:input placeholder="Enter " path="dayOfPublish" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->
 
             <label ><b>QUANTITY</b></label>
-            <form:input placeholder="Enter " path="" required="true"/>
+            <form:input type="number" path="quantity" required="true"/>
             <!--<input type="number" placeholder="Enter "  required>-->
 
             <label ><b>POSITION</b></label>
-            <form:input placeholder="Enter " path="" required="true"/>
+            <form:input placeholder="Enter " path="position" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->
             
             
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
             <div class="clearfix">
-            <button type="reset" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">ADD</button>
+                <button type="reset" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">ADD</button>
             </div>
         </div>
         

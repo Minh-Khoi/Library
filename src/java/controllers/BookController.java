@@ -8,8 +8,10 @@ package controllers;
 import models.dao.*;
 import models.dto.*;
 import java.util.*;
+import java.util.regex.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,9 +43,24 @@ public class BookController {
             mod.put("usingUser", us);
             mod.addAttribute("usingUser", us);
             mod.addAttribute("addingBook", new Book());
-            return "addUser";
+            return "addBook";
         }
         return "login";
+    }
+    
+    @RequestMapping(value = "/listbook/{usingUserID}", method = RequestMethod.POST)
+    public String returnSearchBoard(@ModelAttribute(value = "addingBook") Book book, BindingResult result,
+                                                    @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
+        BookDAO dao = new BookDAO();
+        boolean validDayOfPub = Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", book.getDayOfPublish()),
+                validBook = !result.hasErrors() && validDayOfPub;
+        User us = new UserDAO().readByID(usingUserID);
+        if(validBook){
+            dao.create(book);
+            mod.put("usingUser", us);
+            return list(usingUserID, mod);
+        }
+        return moveToAddBook(us, mod);
     }
     
 //    @RequestMapping(value = "/addBook/{usingUserID}", method = RequestMethod.GET)
