@@ -33,7 +33,7 @@
                     Search Book
                 </h2>
 
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Search for names..">
                 <table id="myTable">
                     <tr class="header">
                         <th style="width:10%;">Code</th>
@@ -65,11 +65,16 @@
                     </tr>      -->          
     
                 </table>
+                
                 <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/addBook.html">
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
                     <button type="submit" style="display: ${display}">Add book</button>
                 </form:form>
-                <a href=""><button style="display: ${display}">Update book</button></a>
+                
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/updateBook.html">
+                    <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
+                    <button type="submit" style="display: ${display}">Update book</button>
+                </form:form>
                 <a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
                     <button>Board of deals</button>
                 </a>

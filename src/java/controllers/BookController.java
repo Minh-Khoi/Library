@@ -48,6 +48,17 @@ public class BookController {
         return "login";
     }
     
+    @RequestMapping(value = "/updateBook", method = RequestMethod.POST)
+    public String moveToUpdateBook(@ModelAttribute(value = "usingUser") User us, ModelMap mod){
+        if (us.getUserID() == 1){
+            mod.put("usingUser", us);
+            mod.addAttribute("usingUser", us);
+            mod.addAttribute("updatingBook", new Book());
+            return "UpdateBook";
+        }
+        return "login";
+    }
+    
     @RequestMapping(value = "/listbook/{usingUserID}", method = RequestMethod.POST)
     public String returnSearchBoard(@ModelAttribute(value = "addingBook") Book book, BindingResult result,
                                                     @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
@@ -63,6 +74,21 @@ public class BookController {
         return moveToAddBook(us, mod);
     }
     
+    
+    @RequestMapping(value = "/listbookupdated/{usingUserID}", method = RequestMethod.POST)
+    public String returnSearchBoard2(@ModelAttribute(value = "updatingBook") Book book, BindingResult result,
+                                                    @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
+        BookDAO dao = new BookDAO();
+        boolean validDayOfPub = Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", book.getDayOfPublish()),
+                validBook = !result.hasErrors() && validDayOfPub;
+        User us = new UserDAO().readByID(usingUserID);
+        if(validBook){
+            dao.update(book);
+            mod.put("usingUser", us);
+            return list(usingUserID, mod);
+        }
+        return moveToUpdateBook(us, mod);
+    }
 //    @RequestMapping(value = "/addBook/{usingUserID}", method = RequestMethod.GET)
 //    public String moveToAddBook(@PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
 //        if (usingUserID == 1){

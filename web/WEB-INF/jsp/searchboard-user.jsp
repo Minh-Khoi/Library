@@ -33,7 +33,7 @@
                     Search User 
                 </h2>
 
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Search for names..">
                 <table id="myTable">
                     <tr class="header">
                         <th style="width:10%;">Code</th>
