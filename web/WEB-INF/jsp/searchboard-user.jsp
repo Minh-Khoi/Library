@@ -76,9 +76,9 @@
                     <button  type="button" >Board of books</button>
                 </a>
                     
-                <!--<a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
+                <a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
                     <button  type="button" >Board of deals</button>
-                </a>-->
+                </a>
             </div>
 
         </div>

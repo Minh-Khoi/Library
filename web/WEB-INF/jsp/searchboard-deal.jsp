@@ -50,6 +50,8 @@
                             <td>${de.bookID} </td>
                             <td>${de.borrowDay} </td>
                             <td>${de.returnDay} </td>
+                            
+                            
                         </tr>
                     </c:forEach>
                     
@@ -76,6 +78,15 @@
                 <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/updateDeal.html">
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>        
                     <button style="display: ${display}">Update Deal</button>
+                </form:form>
+                
+                <a href="<%= request.getContextPath()%>/listbook/${usingUser.userID}.html">
+                    <button  type="button" >Board of books</button>
+                </a>
+                    
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser.html">
+                    <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
+                    <button>Board of users</button>
                 </form:form>
             </div>
 
