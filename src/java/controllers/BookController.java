@@ -7,6 +7,7 @@ package controllers;
 
 import models.dao.*;
 import models.dto.*;
+import controllers.*;
 import java.util.*;
 import java.util.regex.*;
 import org.springframework.stereotype.Controller;
@@ -59,7 +60,7 @@ public class BookController {
         return "login";
     }
     
-    @RequestMapping(value = "/listbook/{usingUserID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/listbookadded/{usingUserID}", method = RequestMethod.POST)
     public String returnSearchBoard(@ModelAttribute(value = "addingBook") Book book, BindingResult result,
                                                     @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
         BookDAO dao = new BookDAO();

@@ -3,7 +3,8 @@
     Created on : Jun 17, 2019, 1:17:53 PM
     Author     : USER
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -42,13 +43,13 @@
                         <th style="width:35%;">Date Of Returning</th>
                     </tr>
                     
-                    <c:forEach var="deal" items="${list}">
+                    <c:forEach var="de" items="${list}">
                         <tr>
-                            <td>${deal.dealID}</td>
-                            <td>${deal.userID} </td>
-                            <td>${deal.bookID} </td>
-                            <td>${deal.borrowDay} </td>
-                            <td>${deal.returnDay} </td>
+                            <td>${de.dealID}</td>
+                            <td>${de.userID} </td>
+                            <td>${de.bookID} </td>
+                            <td>${de.borrowDay} </td>
+                            <td>${de.returnDay} </td>
                         </tr>
                     </c:forEach>
                     
@@ -66,9 +67,16 @@
                     </tr>                -->
     
                 </table>
-                <a href=""><button style="display: ${display}">Add user</button></a>
-                <a href=""><button style="display: ${display}">Update user</button></a>
-
+                        
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/addDeal.html">
+                    <form:input path="userID" value="${usingUser.userID}" type="hidden"/>        
+                    <button style="display: ${display}">Add Deal</button>
+                </form:form>
+                
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/updateDeal.html">
+                    <form:input path="userID" value="${usingUser.userID}" type="hidden"/>        
+                    <button style="display: ${display}">Update Deal</button>
+                </form:form>
             </div>
 
         </div>

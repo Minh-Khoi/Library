@@ -3,14 +3,42 @@
     Created on : Jun 17, 2019, 1:20:25 PM
     Author     : USER
 --%>
-
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="./css/add/small.css">
 <body>
 
-    <form action="" style="border:1px solid #ccc">
+    <form:form action="" cssStyle="border:1px solid #ccc" commandName="addingDeal">
+        
+        <div class="container">
+            <h1>ADD DEAL</h1>
+            <hr>
+
+            <label  ><b>USER 's ID</b></label>
+            <form:input type="text" placeholder="Enter " path="userID" required="true"/>
+
+            <label  ><b> BOOK 's ID </b></label>
+            <form:input type="text" placeholder="Enter " path="bookID" required="true"/>
+
+            <label  ><b>Borrowing Day</b></label>
+            <form:input type="text" placeholder="Enter " path="borrowDay" required="true"/>
+
+            <label  ><b>Return Day</b></label>
+            <form:input type="text" placeholder="Enter " path="returnDay" />
+            
+            
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+                <button type="reset" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">ADD</button>
+            </div>
+        </div>
+    </form:form>
+    
+    <!--<form action="" style="border:1px solid #ccc">
         <div class="container">
             <h1>ADD DEAL</h1>
             <hr>
@@ -38,7 +66,7 @@
                 <button type="submit" class="signupbtn">ADD</button>
             </div>
         </div>
-    </form>
+    </form>-->
 
 </body>
 </html>

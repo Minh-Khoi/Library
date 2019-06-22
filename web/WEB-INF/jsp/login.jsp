@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="<%= request.getContextPath()%>/css/login/login.css">
     </head>
     <body>
-        <form:form method="post" modelAttribute="user" action="listuser.html">
+        <form:form method="post" modelAttribute="user" action="${pageContext.servletContext.contextPath}/listuser.html">
             
             <div class="container">
                 <label ><b>Username</b></label>
@@ -23,11 +23,11 @@
                 <!--<input type="password" placeholder="Enter Password" name="psw" required>-->
                 
                 <form:input path="password"/>
-                <button type="">Login</button>
+                <button type="submit">Login</button>
             </div>
             
             <div class="container" style="background-color:#f1f1f1">
-                <a href="<%= request.getContextPath()%>/listbook/1.html "><button type="button" class="cancelbtn">Cancel</button></a>
+                <a href="#"><button type="button" class="cancelbtn">Cancel</button></a>
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form:form>

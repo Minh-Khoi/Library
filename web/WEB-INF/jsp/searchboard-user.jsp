@@ -3,6 +3,7 @@
     Created on : Jun 16, 2019, 10:05:37 PM
     Author     : USER
 --%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/mobile.css">
+        <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/mobile.css">
     </head>
     <body>
         <div class="menu-img">
@@ -61,11 +62,23 @@
                     </tr>            -->    
                 </table>
                 
-                <a href=""><button style="display: ${display}">Add user</button></a>
-                <a href=""><button style="display: ${display}" >Update user</button></a>
+                <form:form method="post" commandName="usingUser" action="${pageContext.servletContext.contextPath}/addUser.html">
+                    <form:input type="hidden" path="userID" value="${usingUser.userID}"/>
+                    <button style="display: ${display}">Add user</button>
+                </form:form>
+                
+                <form:form method="post" commandName="usingUser" action="${pageContext.servletContext.contextPath}/updateUser.html">
+                    <form:input type="hidden" path="userID" value="${usingUser.userID}"/>
+                    <button style="display: ${display}" >Update user</button>
+                </form:form>
+                
                 <a href="<%= request.getContextPath()%>/listbook/${usingUser.userID}.html">
                     <button  type="button" >Board of books</button>
                 </a>
+                    
+                <!--<a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
+                    <button  type="button" >Board of deals</button>
+                </a>-->
             </div>
 
         </div>

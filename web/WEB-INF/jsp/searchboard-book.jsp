@@ -75,9 +75,16 @@
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
                     <button type="submit" style="display: ${display}">Update book</button>
                 </form:form>
+                    
                 <a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
                     <button>Board of deals</button>
                 </a>
+                    
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser.html">
+                    <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
+                    <button>Board of users</button>
+                </form:form>
+                
             </div>
 
 
