@@ -58,6 +58,7 @@ public class DealController {
             mod.put("usingUser", user);
             mod.addAttribute("usingUser", user);
             mod.addAttribute("updatingDeal", new Deal());
+            mod.addAttribute("deleteDeal", new Deal());
             return "UpdateDeal";
         }
         return "login";
@@ -69,7 +70,7 @@ public class DealController {
                                                             // from add deal to search board
         UserDAO dao = new UserDAO();
         User us = new UserDAO().readByID(usingUserID);
-        boolean validDeal = res.hasErrors() && 
+        boolean validDeal = !res.hasErrors() && 
                                 Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", deal.getBorrowDay()) &&
                                 (Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", deal.getReturnDay())
                                                                                                     || deal.getReturnDay().equals(""));
@@ -88,12 +89,27 @@ public class DealController {
                                                             // from update deal to search board
         UserDAO dao = new UserDAO();
         User us = new UserDAO().readByID(usingUserID);
-        boolean validDeal = res.hasErrors() && 
+        boolean validDeal = !res.hasErrors() && 
                                 Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", deal.getBorrowDay()) &&
                                 (Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", deal.getReturnDay()) 
                                                                                                     || deal.getReturnDay().equals("")); 
         if(validDeal){
             new DealDAO().update(deal);
+            mod.put("usingUser", us);
+            mod.addAttribute("usingUser", us);
+            return list(usingUserID, mod);
+        }
+        return movetoUpdateDeal(us, mod);
+    }
+    
+    @RequestMapping(value = "/listdealdeleted/{usingUserID}", method = RequestMethod.POST)
+    public String returnSearchBoard3(@ModelAttribute(value = "deleteDeal") Deal deal, BindingResult res,
+                                                @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
+                                                                                // Render from addUser to searchboard user
+        User us = new UserDAO().readByID(usingUserID);
+        boolean validDeal = !res.hasErrors() && new BookDAO().readByID(deal.getDealID())!=null ;
+        if(validDeal){
+            new DealDAO().delete(deal.getDealID());
             mod.put("usingUser", us);
             mod.addAttribute("usingUser", us);
             return list(usingUserID, mod);

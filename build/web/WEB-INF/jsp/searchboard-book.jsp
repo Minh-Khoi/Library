@@ -37,9 +37,10 @@
                 <table id="myTable">
                     <tr class="header">
                         <th style="width:10%;">Code</th>
-                        <th style="width:30%;">Book Name</th>
-                        <th style="width:30%;">Author</th>
-                        <th style="width:30%;">Publisher</th>
+                        <th style="width:25%;">Book Name</th>
+                        <th style="width:25%;">Author</th>
+                        <th style="width:25%;">Publisher</th>
+                        <th style="width: 15%"> Options </th>
                     </tr>
                     
                     <c:forEach var="book" items="${list}">
@@ -48,6 +49,25 @@
                             <td>${book.bookName} </td>
                             <td>${book.author} </td>
                             <td>${book.publisher} </td>
+                            
+                            <th style="width:20%;">
+                                    
+                                <button class="myBtn">LOOK UP</button>
+                                <!-- The Modal -->
+                                <div id="" class="modal myModal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        Book name: ${book.bookName } <br>
+                                        Author: ${book.author} <br>
+                                        Publisher ${book.publisher} <br>
+                                        Date of Publish: ${book.dayOfPublish} <br>
+                                        Position: ${book.position} <br>
+                                        Quantity: ${book.quantity}
+                                    </div>
+
+                                </div>
+                            </th>
                         </tr>
                     </c:forEach>
                     
@@ -66,12 +86,14 @@
     
                 </table>
                 
-                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/addBook.html">
+                <form:form commandName="usingUser"  method="post"
+                           action="${pageContext.servletContext.contextPath}/addBook.html">
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
                     <button type="submit" style="display: ${display}">Add book</button>
                 </form:form>
                 
-                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/updateBook.html">
+                <form:form commandName="usingUser" method="post"
+                           action="${pageContext.servletContext.contextPath}/updateBook.html">
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
                     <button type="submit" style="display: ${display}">Update book</button>
                 </form:form>

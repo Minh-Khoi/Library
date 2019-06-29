@@ -38,13 +38,36 @@
                 <table id="myTable">
                     <tr class="header">
                         <th style="width:10%;">Code</th>
-                        <th style="width:90%;">User</th>
+                        <th style="width:70%;">User</th>
+                        
+                        <c:if test="${display == ''}">
+                            <th style="width:20%;">Options</th>
+                        </c:if>
                     </tr>
                     
                     <c:forEach var="us" items="${list}">
                         <tr>
                             <td>${us.userID}</td>
                             <td>${us.userSirName} &nbsp; ${us.userName}</td>
+                            <c:if test="${display == ''}">
+                                <th style="width:20%;">
+                                    
+                                    <button class="myBtn">LOOK UP</button>
+                                    <!-- The Modal -->
+                                    <div id="" class="modal myModal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            Fullname: ${us.userName } &nbsp; ${ us.userSirName} <br>
+                                            Birth Day: ${us.birthDay} <br>
+                                            Phone: ${us.phoneNumber} <br>
+                                            ID Number: ${us.iD_Number} <br>
+                                            Address: ${us.andress}
+                                        </div>
+
+                                    </div>
+                                </th>
+                            </c:if>
                         </tr>
                     </c:forEach>
                     

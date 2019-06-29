@@ -55,6 +55,7 @@ public class BookController {
             mod.put("usingUser", us);
             mod.addAttribute("usingUser", us);
             mod.addAttribute("updatingBook", new Book());
+            mod.addAttribute("deleteBook", new Book());
             return "UpdateBook";
         }
         return "login";
@@ -86,6 +87,21 @@ public class BookController {
         if(validBook){
             dao.update(book);
             mod.put("usingUser", us);
+            return list(usingUserID, mod);
+        }
+        return moveToUpdateBook(us, mod);
+    }
+    
+    @RequestMapping(value = "/listbookdeleted/{usingUserID}", method = RequestMethod.POST)
+    public String returnSearchBoard3(@ModelAttribute(value = "deleteBook") Book book, BindingResult res,
+                                                @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
+                                                                                // Render from addUser to searchboard user
+        User us = new UserDAO().readByID(usingUserID);
+        boolean validBook = !res.hasErrors() && new BookDAO().readByID(book.getBookID())!=null ;
+        if(validBook){
+            new BookDAO().delete(book.getBookID());
+            mod.put("usingUser", us);
+            mod.addAttribute("usingUser", us);
             return list(usingUserID, mod);
         }
         return moveToUpdateBook(us, mod);

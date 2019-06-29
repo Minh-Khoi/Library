@@ -60,7 +60,7 @@ public class DealDAO {
             prs = conn.prepareStatement(SQL_READALL);
             ResultSet res = prs.executeQuery();
             while (res.next()){
-                Deal de = new Deal(0, res.getInt("User_ID"),res.getInt("Book_ID"), 
+                Deal de = new Deal(res.getInt("Deal_ID"), res.getInt("User_ID"),res.getInt("Book_ID"), 
                                     res.getString("BorrowDay"), res.getString("ReturnDay"));
                 list.add(de);
                 System.out.println(de);

@@ -52,3 +52,24 @@ function myFunction2() {
         }
     }
 }
+
+// Handle the Modal displaying depend on button LOOK UP in each cells of Table
+    // Get the modal
+    var modals = document.getElementsByClassName("myModal");
+
+    // Get the button that opens the modal
+    var btns = document.getElementsByClassName("myBtn");
+
+    for(let i =0;i<btns.length;i++){
+        // When the user clicks on the button, open the modal 
+        btns[i].onclick = function() {
+            modals[i].style.display = "block";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        modals[i].onclick = function(event) {
+            if (event.target == modals[i]) {
+              modals[i].style.display = "none";
+            }
+        }
+    }

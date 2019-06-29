@@ -3,6 +3,7 @@
     Created on : Jun 17, 2019, 1:22:28 PM
     Author     : USER
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,9 +11,8 @@
 <link rel="stylesheet" href="./css/add/small.css">
 <body>
     
-    <form:form cssStyle="border:1px solid #ccc"
-            action="${pageContext.servletContext.contextPath}/listbookupdated/${usingUser.userID}.html" 
-            method="POST" commandName="updatingBook">
+    <form:form cssStyle="border:1px solid #ccc" method="POST" commandName="updatingBook"
+            action="${pageContext.servletContext.contextPath}/listbookupdated/${usingUser.userID}.html" >
         
         <div class="container">
             <h1>ALTER BOOK</h1>
@@ -56,6 +56,21 @@
         
     </form:form>
     
+    
+    <hr style="background: red solid; height: 0.3em; color: red">
+    
+    <form:form cssStyle="border:1px solid #ccc" method="post" commandName="deleteBook" 
+               action="${pageContext.servletContext.contextPath}/listbookdeleted/${usingUser.userID}.html" >
+        <h1>DELETE BOOK</h1>
+        <hr>
+        <label ><b>BOOK ID</b></label>
+        <form:input type="text" placeholder="Enter " path="bookID" required="true" />
+        
+        <div class="clearfix">
+            <button type="reset" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">DELETE</button>
+        </div>
+    </form:form>
     <!--<form action="" style="border:1px solid #ccc">
         <div class="container">
             <h1>UPDATE BOOK</h1>
@@ -94,7 +109,9 @@
             </div>
         </div>
     </form> -->
-
+    <a href="<%= request.getContextPath()%>/listbook/${usingUser.userID}.html">
+        <button  type="button" >Return to Search Board</button>
+    </a>
 </body>
 
 </html>

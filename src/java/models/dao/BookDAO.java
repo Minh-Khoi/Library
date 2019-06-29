@@ -162,5 +162,6 @@ public class BookDAO {
 ////        dao.create(book2);
 ////        dao.create(book);
 //        System.out.println(book==null);
+//            new BookDAO().delete(4);
 //    }
 }

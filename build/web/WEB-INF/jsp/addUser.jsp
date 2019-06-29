@@ -92,6 +92,10 @@
             </div>
         </div>
     </form>     -->
+    <form:form method="post" commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser2.html">
+        <form:input type="hidden" path="userID" value="${usingUser.userID}"/>
+        <button type="submit">Return to SEARCH BOARD</button>
+    </form:form>
 
 </body>
 </html>

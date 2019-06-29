@@ -12,7 +12,7 @@ public class Book implements Serializable, Comparable<Book>{
     private int quantity, bookID;
     private String  bookName, author, publisher, dayOfPublish, position;
 
-    public Book( int bookID, String bookName, String author, String publisher, String dayOfPublish,int quantity, String position) {
+    public Book( int bookID, String bookName, String author, String publisher, String dayOfPublish, int quantity, String position) {
         this.quantity = quantity;
         this.bookID = bookID;
         this.bookName = bookName;

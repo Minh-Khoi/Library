@@ -35,10 +35,17 @@ public class UserController {
                 mod.put("display", display);
                 mod.put("usingUser", user);
                 mod.addAttribute("usingUser", user);
+                mod.addAttribute("choosingUser", new User());
                 return "searchboard-user";
             }
         }
         return "login";
+    }
+    
+    @RequestMapping(value = "/listuser2")
+    public String list2(@ModelAttribute(value = "usingUser") User user, ModelMap mod){ //Render from Update User to search board
+        User us = new UserDAO().readByID(user.getUserID());
+        return list(us, mod);
     }
     
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
@@ -62,6 +69,7 @@ public class UserController {
             mod.put("usingUser", us);
             mod.addAttribute("usingUser", us);
             mod.addAttribute("updatingUser", new User());
+            mod.addAttribute("deleteUser", new User());
             return "UpdateUser";
         }
         return "login";
@@ -73,7 +81,7 @@ public class UserController {
                                                                                 // Render from addUser to searchboard user
         UserDAO dao = new UserDAO();
         User us = new UserDAO().readByID(usingUserID);
-        boolean validUser = res.hasErrors() && 
+        boolean validUser = !res.hasErrors() && 
                                 Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", user.getBirthDay());
         if(validUser){
             dao.create(user);
@@ -90,7 +98,7 @@ public class UserController {
                                                                                 // Render from addUser to searchboard user
         UserDAO dao = new UserDAO();
         User us = new UserDAO().readByID(usingUserID);
-        boolean validUser = res.hasErrors() && 
+        boolean validUser = !res.hasErrors() && 
                                 Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", user.getBirthDay());
         if(validUser){
             dao.update(user);
@@ -100,4 +108,21 @@ public class UserController {
         }
         return moveToUpdateUser(us, mod);
     }
+    
+    @RequestMapping(value = "/listuserdeleted/{usingUserID}")
+    public String returnSearchBoard3(@ModelAttribute(value = "updatingUser") User user, BindingResult res,
+                                                @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
+                                                                                // Render from addUser to searchboard user
+        UserDAO dao = new UserDAO();
+        User us = new UserDAO().readByID(usingUserID);
+        boolean validUser = !res.hasErrors() && dao.readByID(user.getUserID())!=null ;
+        if(validUser){
+            dao.delete(user.getUserID());
+            mod.put("usingUser", us);
+            mod.addAttribute("usingUser", us);
+            return list(us, mod);
+        }
+        return moveToUpdateUser(us, mod);
+    }
+    
 }

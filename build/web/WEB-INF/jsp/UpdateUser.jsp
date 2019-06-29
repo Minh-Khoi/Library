@@ -57,6 +57,20 @@
         
     </form:form>
     
+    <hr style="background: red solid; height: 0.3em;">
+    
+    <form:form cssStyle="border:1px solid #ccc" method="post" commandName="deleteUser" 
+               action="${pageContext.servletContext.contextPath}/listuserdeleted/${usingUser.userID}.html" >
+        <h1>DELETE USER</h1>
+        <hr>
+        <label ><b>USER ID</b></label>
+        <form:input type="text" placeholder="Enter " path="userID" required="true" />
+        
+        <div class="clearfix">
+            <button type="reset" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">DELETE</button>
+        </div>
+    </form:form>
     <!--<form action="" style="border:1px solid #ccc">
         <div class="container">
             <h1>UPDATE USER</h1>
@@ -97,6 +111,9 @@
             </div>
         </div>
     </form>-->
-
+    <form:form method="post" commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser2.html">
+        <form:input type="hidden" path="userID" value="${usingUser.userID}"/>
+        <button type="submit">Return to SEARCH BOARD</button>
+    </form:form>
 </body>
 </html>
