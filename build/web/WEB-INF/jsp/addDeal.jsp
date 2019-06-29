@@ -67,6 +67,8 @@
             </div>
         </div>
     </form>-->
-
+    <a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
+        <button>Return to Search Board </button>
+    </a>
 </body>
 </html>

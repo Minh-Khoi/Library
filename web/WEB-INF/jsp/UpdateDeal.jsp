@@ -10,10 +10,11 @@
 <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/add/small.css">
 <body>
 
-    <form:form action="" cssStyle="border:1px solid #ccc" method="post" commandName="updatingDeal">
+    <form:form cssStyle="border:1px solid #ccc" method="post" commandName="updatingDeal"
+              action="${pageContext.servletContext.contextPath}/listdealupdated/${usingUser.userID}.html"  >
         
         <div class="container">
-            <h1>ADD DEAL</h1>
+            <h1>UPDATE DEAL</h1>
             <hr>
 
             <label  ><b>USER 's ID</b></label>
@@ -38,7 +39,7 @@
         </div>
     </form:form>
     
-    <hr style="background: red solid; height: 0.3em;">
+    <div style="background: red solid; height: 0.3em;"></div>
     
     <form:form cssStyle="border:1px solid #ccc" method="post" commandName="deleteDeal" 
                action="${pageContext.servletContext.contextPath}/listdealdeleted/${usingUser.userID}.html" >
@@ -83,7 +84,9 @@
             </div>
         </div>
     </form>-->
-
+    <a href="<%= request.getContextPath()%>/listdeal/${usingUser.userID}.html">
+        <button>Return to Search Board </button>
+    </a>
 </body>
 
 </html>
