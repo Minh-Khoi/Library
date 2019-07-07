@@ -20,7 +20,7 @@ public class LoginController {
     public LoginController() {
     }
     
-    @RequestMapping(value="/index", method = RequestMethod.GET)
+    @RequestMapping(value="/login", method = RequestMethod.GET)
     public String renderUser(ModelMap mod){
         mod.addAttribute("user", new User());
         return "login";
