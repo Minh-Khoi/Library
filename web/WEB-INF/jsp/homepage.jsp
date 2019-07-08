@@ -78,7 +78,7 @@
                     <img src="${pageContext.servletContext.contextPath}/img-for-homepage/intro-bg.jpg" alt="" srcset="">
                     <p> </p>
                 </div>
-                    <p>To SIGN UP: Please send an email to <a>box_library@gmail.com</a>, as below</p>
+                <p>To SIGN UP: Please send an email to <a>box_library@gmail.com</a>, as below</p>
                 <p>First Name: <br>
                     Last Name:<br> birthDay<br> phoneNumber<br> iD_Number<br> andress<br> password</p>
                 <p>And then waiting for our response</p>

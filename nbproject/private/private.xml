@@ -2,6 +2,34 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/E:/java/Library/src/java/controllers/DealController.java</file>
+            <file>file:/E:/java/Library/src/java/controllers/UserController.java</file>
+            <file>file:/E:/java/Library/src/java/models/dto/User.java</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/searchboard-deal.jsp</file>
+            <file>file:/E:/java/Library/src/java/models/dao/DealDAO.java</file>
+            <file>file:/E:/java/Library/web/css/mobile.css</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/addBook.jsp</file>
+            <file>file:/E:/java/Library/README.md</file>
+            <file>file:/E:/java/Library/src/java/models/dto/Book.java</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/addUser.jsp</file>
+            <file>file:/E:/java/Library/src/java/controllers/LoginController.java</file>
+            <file>file:/E:/java/Library/src/java/models/dao/BookDAO.java</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/login.jsp</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/UpdateDeal.jsp</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/searchboard-user.jsp</file>
+            <file>file:/E:/java/Library/src/java/models/dao/UserDAO.java</file>
+            <file>file:/E:/java/Library/src/java/controllers/BookController.java</file>
+            <file>file:/E:/java/Library/src/java/models/dto/Deal.java</file>
+            <file>file:/E:/java/Library/web/javascript/main.js</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/searchboard-book.jsp</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/UpdateBook.jsp</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/UpdateUser.jsp</file>
+            <file>file:/E:/java/Library/web/WEB-INF/jsp/addDeal.jsp</file>
+        </group>
+>>>>>>> 5a6bc6a21ed09083cf346820f62288ec6e93a72e
     </open-files>
 </project-private>
