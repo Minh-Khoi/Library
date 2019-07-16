@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="<%= request.getContextPath()%>/css/login/login.css">
     </head>
     <body>
+        <h1 style="text-align: center">LOGIN</h1>
         <form:form method="post" modelAttribute="user" action="${pageContext.servletContext.contextPath}/listuser.html">
             
             <div class="container">

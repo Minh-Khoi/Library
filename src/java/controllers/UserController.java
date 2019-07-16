@@ -43,7 +43,8 @@ public class UserController {
     }
     
     @RequestMapping(value = "/listuser2")
-    public String list2(@ModelAttribute(value = "usingUser") User user, ModelMap mod){ //Render from Update User to search board
+    public String list2(@ModelAttribute(value = "usingUser") User user, ModelMap mod){ //Render from searchboard-book and
+                                                                                        // searchboard-deal to searchboard-user
         User us = new UserDAO().readByID(user.getUserID());
         return list(us, mod);
     }
@@ -75,10 +76,11 @@ public class UserController {
         return "login";
     }
     
-    @RequestMapping(value = "/listuseradded/{usingUserID}")
+    @RequestMapping(value = "/listuseradded/{usingUserID}", method = RequestMethod.POST)
     public String returnSearchBoard(@ModelAttribute(value = "addingUser") User user, BindingResult res,
                                                 @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
                                                                                 // Render from addUser to searchboard user
+        System.out.println("check ModelAttribute: "+ user);                                            
         UserDAO dao = new UserDAO();
         User us = new UserDAO().readByID(usingUserID);
         boolean validUser = !res.hasErrors() && 
@@ -92,10 +94,10 @@ public class UserController {
         return moveToAddUser(us, mod);
     }
     
-    @RequestMapping(value = "/listuserupdated/{usingUserID}")
+    @RequestMapping(value = "/listuserupdated/{usingUserID}", method = RequestMethod.POST)
     public String returnSearchBoard2(@ModelAttribute(value = "updatingUser") User user, BindingResult res,
                                                 @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
-                                                                                // Render from addUser to searchboard user
+                                                                                // Render from update user to searchboard user
         UserDAO dao = new UserDAO();
         User us = new UserDAO().readByID(usingUserID);
         boolean validUser = !res.hasErrors() && 
@@ -109,7 +111,7 @@ public class UserController {
         return moveToUpdateUser(us, mod);
     }
     
-    @RequestMapping(value = "/listuserdeleted/{usingUserID}")
+    @RequestMapping(value = "/listuserdeleted/{usingUserID}", method = RequestMethod.POST)
     public String returnSearchBoard3(@ModelAttribute(value = "updatingUser") User user, BindingResult res,
                                                 @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
                                                                                 // Render from addUser to searchboard user

@@ -7,8 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/add/small.css">
-
+</head>
 <body>
 
     <form:form cssStyle="border:1px solid #ccc" 

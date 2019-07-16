@@ -1,0 +1,46 @@
+Chào mừng các bạn đến với Video Demo Đồ án Library.
+Đồ án này là một ứng dụng web có chức năng quản lý hoạt động lưu trữ và
+cho mượn sách của một thư viện nhỏ. Ứng dụng được xây dựng bằng 
+Spring MVC (backend) và HTML/CSS/JS/Bootstrap (frontend) và sử dụng hệ
+quản trị CSDL SQL Server.
+
+Mình sẽ hướng dẫn các bạn cài đặt.
+Trước hết, máy tính các bạn cần cài đặt SQL Server, JDK, và Netbeans IDE
+Bây giờ, Hãy tải file zip đồ án về và extract.
+Đây là thư mục Library sau khi đã extract.
+Bây giờ các bạn mở SQL Server, mở file DBBackup.sql trong thư mục
+Database script. thực thi toàn bộ câu lệnh trong file sql.
+
+Ta đã tạo thành công Database Library. Database này gồm 03 bảng: Users,
+Books, Deals. Trong đó Bảng Users được nhập sẵn một account là admin admin
+Đây là account duy nhất được cấp quyền thêm, sửa, xóa các dữ liệu trong
+các bảng.
+
+Ta sẽ thử kiểm tra kết nối Database.
+Trước hết các bạn mở Netbeans IDE và mở đồ án.
+Các bạn mở file DBConnector.java trong package model.util
+Run file DBConnector.java.
+Kết nối Database thành công.
+Các bạn lưu ý rằng, trường PASS trong file DBConnector.java của mình
+là "123456", đó chính là mật khẩu của account sa trong SQL Server.
+Tùy theo mật khẩu account sa trong SQL Server của máy tính, Các bạn cần
+sửa giá trị của trường PASS này cho đúng!!
+
+Bây giờ ta sẽ chạy thử đồ án.
+Mình đã đăng nhập bằng tài khoản admin với password là admin.
+Bây giờ mình sẽ sử dụng tài khoản admin để thêm, sửa, xóa Users
+Mình sẽ sửa ngày sinh của bạn Giáng My. Các bạn nhấn Ctrl rồi click 
+update user nhé.
+THÀNH CÔNG.
+Bây giờ mình sẽ xóa acc Minh Khôi đi.
+Mình sẽ nhập thêm vài cái acc nữa.
+Các bạn có thể lọc danh sách theo tên hoặc theo ID.
+
+Các thao tác đối với danh sách Book và Deal cũng tương tự.
+Mình sẽ làm ví dụ với Book
+
+Mình đã hoàn thành xong video demo đồ án. Rất mong đồ án này có thể 
+góp phần giúp các bạn học tốt, và căn cứ vào nó xây dựng một đồ án khác
+hoàn thiện hơn.
+
+Cám ơn các bạn đã theo dõi!! Hẹn gặp lại trong video tiếp theo <3 

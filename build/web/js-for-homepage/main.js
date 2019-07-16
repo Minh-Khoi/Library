@@ -1,13 +1,13 @@
 // for menu
 
 // for infos
-let width_current = window.innerWidth;
+var width_current = window.innerWidth;
 window.addEventListener("resize", function () {
     if ((width_current < 768 && window.innerWidth > 768) ||
         (width_current > 768 && window.innerWidth < 768)) {
-        let DOMs =
+        var DOMs =
             document.querySelectorAll(".intros .row");
-        for (let i = 0; i < DOMs.length; i++) {
+        for (var i = 0; i < DOMs.length; i++) {
             if (i % 2 != 0) reverse_child(DOMs[i]);
         }
         width_current = window.innerWidth;
@@ -15,9 +15,9 @@ window.addEventListener("resize", function () {
 });
 window.addEventListener("load", function () {
     if (window.innerWidth > 768) {
-        let DOMs =
+        var DOMs =
             document.querySelectorAll(".intros .row");
-        for (let i = 0; i < DOMs.length; i++) {
+        for (var i = 0; i < DOMs.length; i++) {
             if (i % 2 != 0) reverse_child(DOMs[i]);
         }
         width_current = window.innerWidth;
@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
 });
 
 function reverse_child(element) {
-    // let parent = el.parentNode;
+    // var parent = el.parentNode;
     for (var i = 1; i < element.childNodes.length; i++) {
         element.insertBefore(element.childNodes[i], element.firstChild);
     }

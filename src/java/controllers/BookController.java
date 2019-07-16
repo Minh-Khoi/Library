@@ -64,6 +64,7 @@ public class BookController {
     @RequestMapping(value = "/listbookadded/{usingUserID}", method = RequestMethod.POST)
     public String returnSearchBoard(@ModelAttribute(value = "addingBook") Book book, BindingResult result,
                                                     @PathVariable(value = "usingUserID") int usingUserID, ModelMap mod){
+        System.out.println("book added" + book);
         BookDAO dao = new BookDAO();
         boolean validDayOfPub = Pattern.matches("^((0|1)\\d{1})(\\/|-)((0|1|2)\\d{1})(\\/|-)((19|20)\\d{2})", book.getDayOfPublish()),
                 validBook = !result.hasErrors() && validDayOfPub;

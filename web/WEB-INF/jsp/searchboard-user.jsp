@@ -5,7 +5,7 @@
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +23,7 @@
             
         </div>
         <div class="logo-bgr">
-            <h1>Welcome to Library</h1>
+            <h1>Welcome to Library. Nguyễn Ngọc Minh</h1>
             <hr>
         </div>
         <div class="main">

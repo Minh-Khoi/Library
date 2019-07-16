@@ -4,15 +4,17 @@
     Author     : USER
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*,java.sql.*"%>
 <!DOCTYPE html>
 <html>
-            <link rel="stylesheet" href="./css/add/small.css">
-
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/add/small.css">
+</head>
 <body>
 
     <form:form cssStyle="border:1px solid #ccc" action="${pageContext.servletContext.contextPath}/listuseradded/${usingUser.userID}.html"
-                                                                                                            commandName="addingUser">
+               acceptCharset="UTF-8"                                                                                commandName="addingUser">
         
         <div class="container">
             <h1>ADD USER</h1>

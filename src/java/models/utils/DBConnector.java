@@ -16,7 +16,7 @@ public class DBConnector {
 
     //  Database credentials
     static final String USER = "sa";
-    static final String PASS = "123456";
+    static final String PASS = "123456";  // Mật khẩu account sa trong SQL Server
     
     Connection conn;
     PreparedStatement prs;
@@ -41,9 +41,9 @@ public class DBConnector {
         return conn;
     }
     
-//    public static void main(String[] args) {
-//        new DBConnector().getConn();
-//    }
+    public static void main(String[] args) {
+        new DBConnector().getConn();
+    }
     
     
 }

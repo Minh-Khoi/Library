@@ -84,7 +84,7 @@
                     <button  type="button" >Board of books</button>
                 </a>
                     
-                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser.html">
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser2.html">
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
                     <button>Board of users</button>
                 </form:form>

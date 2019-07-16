@@ -69,7 +69,7 @@ public class BookDAO {
                                     res.getString("Publisher"), res.getString("DayOfPublish"), 
                                         res.getInt("Quantity"), res.getString("Position"));
                 list.add(bo);
-                System.out.println(bo);
+//                System.out.println(bo);
             }
             return list;
         } catch (SQLException ex) {
@@ -89,7 +89,7 @@ public class BookDAO {
                                     res.getString("Publisher"), res.getString("DayOfPublish"), 
                                         res.getInt("Quantity"), res.getString("Position"));
                 list.add(bo);
-                System.out.println(bo);
+//                System.out.println(bo);
             }
             return list;
         } catch (SQLException ex) {
@@ -107,7 +107,7 @@ public class BookDAO {
                 Book bo = new Book( res.getInt("Book_ID"), res.getString("BookName"), res.getString("Author"), 
                                     res.getString("Publisher"), res.getString("DayOfPublish"), 
                                         res.getInt("Quantity"), res.getString("Position"));
-                System.out.println(bo);
+//                System.out.println(bo);
                 return bo;
             }
         } catch (SQLException ex) {

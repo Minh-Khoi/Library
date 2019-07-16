@@ -64,7 +64,7 @@ public class UserDAO {
                                     res.getString("BirthDay"), res.getString("PhoneNumber"), 
                                         res.getString("ID_Number"), res.getString("Andress"), res.getString("Password"));
                 list.add(us);
-                System.out.println(us);
+//                System.out.println(us);
             }
             return list;
         } catch (SQLException ex) {
@@ -84,7 +84,7 @@ public class UserDAO {
                                     res.getString("BirthDay"), res.getString("PhoneNumber"), 
                                         res.getString("ID_Number"), res.getString("Andress"), res.getString("Password"));
                 list.add(us);
-                System.out.println(us);
+//                System.out.println(us);
             }
             return list;
         } catch (SQLException ex) {
@@ -102,7 +102,7 @@ public class UserDAO {
                 User us = new User(res.getInt("User_ID"), res.getString("User_Name"), res.getString("User_SirName"), 
                                     res.getString("BirthDay"), res.getString("PhoneNumber"), 
                                         res.getString("ID_Number"), res.getString("Andress"), res.getString("Password"));
-                System.out.println(us);
+//                System.out.println(us);
                 return us;
             }
         } catch (SQLException ex) {
@@ -147,13 +147,13 @@ public class UserDAO {
     public static void main(String[] args) {
 //        User us = new User(0, "Khoi", "Nguyen Ngoc", "10/03/1995", "055151511202", "0154521154", "Thua Thien Hue", "hahah");
 
-//        User us = new User(2, "Tuong", "Nguyen Huy", "10/05/1997", "6545641198", ".049423354", "Da Nang","pdsofj");
+        User us = new User(2, "Hiệu", "Nguyễn Văn", "10/05/1997", "01515185", "05412548", "Da Nang","vanhieu");
 //        User us2 = new User(2, "Chinh", "Nguyen Huu", "16/03/1995", "25451035648", "0254512015", "Quang Ninh", "ldijf");
 //        User us3 = new User(0, "usern", "userSir", "18/02/1998", "554554154851", "574112222222228", "Quang Binh", "password");
 //        
-//        UserDAO dao = new UserDAO();
+        UserDAO dao = new UserDAO();
 //        
-//        dao.create(us);
+        dao.create(us);
 //        dao.create(us2);
 //        dao.create(us3);
     }

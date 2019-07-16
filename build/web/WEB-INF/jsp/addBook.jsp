@@ -4,25 +4,26 @@
     Author     : USER
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*,java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="<%= request.getContextPath()%>/css/add/small.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/add/small.css">
 </head>
-    
+
 <body>
     
-    <form:form cssStyle="border:1px solid #ccc" action="${pageContext.servletContext.contextPath}/listbook/${usingUser.userID}.html"
-                                                                                                method="POST" commandName="addingBook">
+    <form:form cssStyle="border:1px solid #ccc" action="${pageContext.servletContext.contextPath}/listbookadded/${usingUser.userID}.html"
+               acceptCharset="UTF-8"                                                                commandName="addingBook">
         <div class="container">
             <h1>ADD BOOK</h1>
             <hr>
 
             <label  ><b>NAME</b></label>
-            <form:input placeholder="Enter " path="bookName" required="true"/>
+            <form:input  placeholder="Enter " path="bookName" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->
-
+            
             <label  ><b> AUTHOR </b></label>
             <form:input placeholder="Enter " path="author" required="true"/>
             <!--<input type="text" placeholder="Enter "  required>-->

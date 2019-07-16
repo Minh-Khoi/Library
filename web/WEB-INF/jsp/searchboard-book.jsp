@@ -5,7 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page  contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -102,7 +102,7 @@
                     <button>Board of deals</button>
                 </a>
                     
-                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser.html">
+                <form:form commandName="usingUser" action="${pageContext.servletContext.contextPath}/listuser2.html">
                     <form:input path="userID" value="${usingUser.userID}" type="hidden"/>
                     <button>Board of users</button>
                 </form:form>

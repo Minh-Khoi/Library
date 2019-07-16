@@ -9,4 +9,4 @@ Hướng 1: Tạo một form vs 2 button "look up" và "delete" trong từng th�
 Hướng 2: Tạo một web page riêng có chức năng Delete và cập nhật toàn bộ thuộc tính của đối tượng trong bảng search board
     - Bổ sung toàn bộ thông tin của một đối tượng vào Bảng searchboard của đối tượng đó.
     - Tạo mới một web page vs phương thức delete theo ID (sử dụng phương thức POST để tránh lộ lọt qua Path)
-    
+    # Library
