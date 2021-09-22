@@ -3,5 +3,5 @@ convert the <b>relative path</b> (in the tags: script:src, img:src, link:href, a
 
 02 steps to handle the relative path:
 St1: Find all the String such as : <b>` href="http`<b> or <b>` src="http`</b>, and add a space between "=" and `"`
-St2: Find all the String such as :  <b>` href="` and ` src="`</b>, replace them with: ` href="${pageContext.request.ServletContext}/` 
+St2: Find all the String such as :  <b>` href="` and ` src="`</b>, replace them with: ` href="${pageContext.request.ServletContext}/` or ` src="${pageContext.request.ServletContext}/`
   
